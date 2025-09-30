@@ -1,0 +1,33 @@
+services:
+  backend:
+    build: .
+    image: askthesky:latest
+    # Comando para iniciar o servidor Uvicorn ouvindo em todas as interfaces de rede
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    # Carrega as variáveis de ambiente a partir de um arquivo .env na raiz do projeto
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  frontend:
+    image: askthesky:latest   # usa a mesma imagem, mas o entrypoint/comando usará a ROLE
+    # Carrega as variáveis de ambiente a partir do mesmo arquivo .env
+    env_file:
+      - .env
+    # Variáveis específicas para o contexto de execução do container do frontend
+    environment:
+      ROLE: frontend
+      API_INTERNAL_URL: http://backend:8000
+      API_EXTERNAL_URL: http://localhost:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

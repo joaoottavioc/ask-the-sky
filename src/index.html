@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenBots - Automação Inteligente para WhatsApp</title>
+    <style>
+        /* Importação da Fonte e Reset Básico */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; border-bottom: 2px solid #00aaff; padding-bottom: 10px; }
+        h3 { font-size: 1.5rem; color: #00aaff; margin-top: 30px;}
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: 0;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav a {
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Seções de Conteúdo */
+        main {
+            padding-top: 80px; /* Espaço para o cabeçalho fixo */
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Seção Hero (Boas-vindas) */
+        #hero {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #1f1f1f;
+        }
+        #hero h1 {
+            font-size: 3rem;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            color: #bbbbbb;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsividade para Telas Menores */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            header h1 {
+                margin-bottom: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            h1 { font-size: 2rem; }
+            #hero h1 { font-size: 2.5rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ZenBots</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#termos">Termos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="hero">
+            <h1>Automação Inteligente para WhatsApp</h1>
+            <p>Conecte-se com seus clientes de forma eficiente, automatizada e escalável.</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>A ZenBots é uma plataforma inovadora focada em fornecer soluções de automação para o WhatsApp. Nossa missão é empoderar empresas, especialmente restaurantes e serviços de delivery, a otimizar o atendimento, aumentar as vendas e melhorar a experiência do cliente através de chatbots inteligentes e personalizáveis.</p>
+            <p>Acreditamos que a tecnologia deve ser uma aliada acessível para negócios de todos os tamanhos, permitindo que eles prosperem na era digital.</p>
+        </section>
+
+        <section id="servicos">
+            <h2>Nossos Serviços</h2>
+            <h3>Plataforma Marketplace para Bots de WhatsApp as a Service</h3>
+            <p>Oferecemos uma solução completa onde desenvolvedores e empresas podem criar, customizar e vender bots de WhatsApp. Nossa plataforma é projetada para ser altamente escalável, atendendo a mais de 500 clientes ativos com bots customizados para diversas necessidades.</p>
+            <ul>
+                <li>Chatbots para cardápios e pedidos de restaurantes.</li>
+                <li>Automação de agendamentos e reservas.</li>
+                <li>Soluções de atendimento ao cliente (SAC).</li>
+                <li>Integração com sistemas de pagamento e logística.</li>
+            </ul>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Estamos sempre disponíveis para conversar. Entre em contato conosco através dos canais abaixo.</p>
+            <p><strong>Endereço:</strong><br>Avenida Sargento Geraldo Santana, 240<br>São Paulo, SP, Brasil</p>
+            <p><strong>Telefone:</strong><br><a href="tel:+5511942037354">+55 11 94203 7354</a></p>
+            <p><strong>Email:</strong><br><a href="mailto:johnriverdu@gmail.com">johnriverdu@gmail.com</a></p>
+        </section>
+
+        <section id="termos">
+            <h2>Termos e Privacidade</h2>
+            
+            <h3>Termos de Serviço</h3>
+            <p><strong>Última atualização: 18 de setembro de 2025</strong></p>
+            <p>Bem-vindo à ZenBots! Estes termos e condições descrevem as regras e regulamentos para o uso da plataforma ZenBots, localizada em https://durable.co/pt.</p>
+            <p>Ao acessar esta plataforma, presumimos que você aceita estes termos e condições. Não continue a usar a ZenBots se não concordar com todos os termos e condições declarados nesta página.</p>
+        
+            <p><strong>1. O Serviço</strong><br>
+            A ZenBots fornece uma plataforma de marketplace ("Software as a Service") que permite aos usuários ("Clientes") criar, gerenciar e vender bots de automação para o WhatsApp ("Bots").</p>
+        
+            <p><strong>2. Contas de Usuário</strong><br>
+            Ao criar uma conta conosco, você deve nos fornecer informações precisas, completas e atuais. A falha em fazer isso constitui uma violação dos Termos, o que pode resultar na rescisão imediata de sua conta em nosso Serviço.</p>
+        
+            <p><strong>3. Uso Aceitável</strong><br>
+            Você concorda em não usar o Serviço para criar Bots que violem as Políticas Comerciais e de Negócios do WhatsApp. Você é o único responsável pelo conteúdo, interações e conformidade legal dos Bots que você cria e opera. É proibido usar o serviço para spam, atividades ilegais ou envio de conteúdo ofensivo.</p>
+        
+            <p><strong>4. Limitação de Responsabilidade</strong><br>
+            A ZenBots não se responsabiliza por quaisquer danos diretos ou indiretos resultantes do uso ou da incapacidade de usar o serviço, incluindo perdas de lucros, dados ou outras perdas intangíveis.</p>
+        
+            <p><strong>5. Modificações nos Termos</strong><br>
+            Reservamo-nos o direito, a nosso exclusivo critério, de modificar ou substituir estes Termos a qualquer momento. Notificaremos sobre quaisquer alterações, publicando os novos Termos de Serviço nesta página.</p>
+        
+            <p><strong>6. Contato</strong><br>
+            Se você tiver alguma dúvida sobre estes Termos, entre em contato conosco pelo e-mail: johnriverdu@gmail.com.</p>
+
+            <h3>Política de Privacidade</h3>
+            <p><strong>Última atualização: 18 de setembro de 2025</strong></p>
+            <p>A sua privacidade é importante para nós. É política da ZenBots respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar na nossa plataforma.</p>
+        
+            <p><strong>1. Dados que Coletamos</strong><br>
+            Coletamos informações que você nos fornece diretamente ao se registrar, como nome, e-mail e informações de contato. Também coletamos dados relacionados ao uso da nossa plataforma e dos bots criados, como históricos de conversas e números de telefone dos contatos dos seus bots, estritamente para a finalidade de operar o serviço contratado.</p>
+        
+            <p><strong>2. Como Usamos os Dados</strong><br>
+            Utilizamos os dados coletados para:
+            <ul>
+                <li>Fornecer, operar e manter nossa plataforma.</li>
+                <li>Melhorar, personalizar e expandir nossos serviços.</li>
+                <li>Entender e analisar como você usa nossa plataforma.</li>
+                <li>Comunicar com você para atendimento ao cliente, atualizações e fins de marketing.</li>
+            </ul>
+            </p>
+        
+            <p><strong>3. Compartilhamento de Dados</strong><p>
+            Não compartilhamos suas informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei. Os dados de conversas e contatos dos bots que você cria são de sua propriedade e responsabilidade, e a ZenBots atua apenas como operadora desses dados para a prestação do serviço.</p>
+        
+            <p><strong>4. Segurança</strong><br>
+            A segurança dos seus dados é uma prioridade. Empregamos medidas de segurança comercialmente aceitáveis para proteger suas informações, mas lembre-se que nenhum método de transmissão pela Internet ou método de armazenamento eletrônico é 100% seguro.</p>
+        
+            <p><strong>5. Seus Direitos (LGPD)</strong><br>
+            Você tem o direito de acessar, corrigir, anonimizar ou eliminar seus dados pessoais. Para exercer esses direitos, entre em contato conosco.</p>
+        
+            <p><strong>6. Contato</strong><br>
+            Se você tiver alguma dúvida sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: johnriverdu@gmail.com.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>ZenBots - Soluções em Automação</strong></p>
+            <p>Avenida Sargento Geraldo Santana, 240, São Paulo, SP</p>
+            <p>Email: <a href="mailto:johnriverdu@gmail.com">johnriverdu@gmail.com</a> | Telefone: <a href="tel:+5511942037354">+55 11 94203 7354</a></p>
+            <p>&copy; 2025 ZenBots. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

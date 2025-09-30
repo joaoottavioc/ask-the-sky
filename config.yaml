@@ -1,0 +1,11 @@
+# config.yaml
+credentials:
+  usernames: {} # Esta linha é ESSENCIAL para a biblioteca.
+
+cookie:
+  expiry_days: 30
+  key: 'uma_chave_secreta_muito_aleatoria_123' 
+  name: 'askthesky_auth_cookie'
+preauthorized:
+  emails:
+    - 'joaoottavioc@gmail.com'

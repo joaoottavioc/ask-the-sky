@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+
+# Envs / Poetry / Venv
+.env
+.venv/
+.env.*        # ex: .env.local
+poetry.lock
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/
+
+# FAISS / caches / dados
+*.faiss
+*.meta.json
+*.db
+cache/
+data/
+
+# OS
+.DS_Store
+Thumbs.db

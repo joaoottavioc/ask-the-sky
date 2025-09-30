@@ -1,0 +1,125 @@
+/* assets/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Esconde elementos padrão do Streamlit */
+[data-testid="stHeader"], footer, #MainMenu {
+    visibility: hidden;
+}
+
+/* Imagem de fundo e fonte principal */
+.stApp {
+    background-image: url("data:image/png;base64,{img_str}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Garante que as colunas na mesma linha se estiquem para ter a mesma altura */
+div[data-testid="stHorizontalBlock"] {
+    align-items: stretch;
+}
+
+/* A coluna se torna um container flex e é FORÇADA a ocupar 100% da altura 
+  disponível na linha, resolvendo o problema de alinhamento.
+*/
+div[data-testid^="stVerticalBlock"] {
+  display: flex !important;
+  height: 100% !important; /* CORREÇÃO FINAL ADICIONADA AQUI */
+}
+
+/* Wrapper interno da coluna se expande para preencher a coluna */
+div[data-testid^="stVerticalBlock"]
+  > div[data-testid="stVerticalBlockBorderWrapper"] {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  min-height: 0 !important;
+}
+
+/* ===== Estilo do painel interno (caixa de vidro) ===== */
+div[data-testid^="stVerticalBlock"]:has(#q1-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type,
+div[data-testid^="stVerticalBlock"]:has(#q2-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type,
+div[data-testid^="stVerticalBlock"]:has(#q3-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type,
+div[data-testid^="stVerticalBlock"]:has(#q4-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type {
+  background: rgba(18,18,26,0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex; 
+  flex-direction: column; 
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Alturas e min-alturas fixas por fileira para travar o layout no primeiro render */
+div[data-testid^="stVerticalBlock"]:has(#q1-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type,
+div[data-testid^="stVerticalBlock"]:has(#q2-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type { 
+  height: 44vh;
+  min-height: 44vh;
+}
+div[data-testid^="stVerticalBlock"]:has(#q3-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type,
+div[data-testid^="stVerticalBlock"]:has(#q4-anchor)
+  > div[data-testid="stVerticalBlockBorderWrapper"]
+  > div[data-testid="stContainer"]:first-of-type { 
+  height: 50vh;
+  min-height: 50vh;
+}
+
+/* Containers internos NÃO herdam altura fixa */
+div[data-testid^="stVerticalBlock"]:has(#q1-anchor)
+  div[data-testid="stContainer"] div[data-testid="stContainer"],
+div[data-testid^="stVerticalBlock"]:has(#q2-anchor)
+  div[data-testid="stContainer"] div[data-testid="stContainer"],
+div[data-testid^="stVerticalBlock"]:has(#q3-anchor)
+  div[data-testid="stContainer"] div[data-testid="stContainer"],
+div[data-testid^="stVerticalBlock"]:has(#q4-anchor)
+  div[data-testid="stContainer"] div[data-testid="stContainer"] {
+  height: auto !important;
+  max-height: none !important;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* Ajustes comuns */
+.stMarkdown h2 { 
+    color:  #a1c9ff; 
+    margin: 0 0 1rem 0; 
+}
+[data-testid="stInfo"] { 
+    margin-bottom: 0.75rem; 
+    background-color: rgba(10, 10, 20, 0.45);
+    border: 1px solid #ff4b4b;
+    border-radius: 10px;
+    padding: 1rem;
+    flex-grow: 1;
+}
+.stButton { 
+    margin-top: auto; 
+}
+
+/* Classe para o placeholder que ocupa o espaço vazio */
+.skeleton {
+  flex: 1 1 auto;
+  border: 1px dashed rgba(255,255,255,0.15);
+  border-radius: 10px;
+  opacity: .6;
+  width: 100%;
+}
